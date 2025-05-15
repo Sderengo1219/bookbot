@@ -8,8 +8,13 @@ def main():
     from stats import num_words
     from stats import char_counts
     from stats import sort_dic
+    import sys 
 
-    filepath = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else:
+        filepath = sys.argv[1]
 
     book_text = get_book_text(filepath)
     words = num_words(book_text)
@@ -20,15 +25,13 @@ def main():
     print("Analyzing book found at books/frankenstein.txt...")
    
     print("----------- Word Count ----------")
-    print(f"{words} words found in the document")
+    print(f"Found {words} total words")
 
     print("--------- Character Count -------")
 
     for each in sorted_list:
-        if each.isalpha() == True:
-            print(each)
-
-    
+        if each["char"].isalpha() == True:
+            print(f"{each["char"]}: {each["num"]}")
 
 main()    
     
