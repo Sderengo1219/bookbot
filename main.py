@@ -22,7 +22,7 @@ def main():
     sorted_list = sort_dic(dict_count)
 
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {filepath}")
    
     print("----------- Word Count ----------")
     print(f"Found {words} total words")
